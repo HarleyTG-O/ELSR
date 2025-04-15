@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eclipse Legion | Search & Rescue Division</title>
+  <link rel="icon" href="https://robertsspaceindustries.com/media/rr7mt08lf3xh4r/logo/ECLN-Logo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+    }
+    header {
+      background-color: #111;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #0ff;
+    }
+    header img {
+      max-width: 150px;
+      margin-bottom: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #0ff;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+    }
+    nav {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #0ff;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    section h2 {
+      color: #0ff;
+    }
+    .contact {
+      background-color: #111;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-top: 1px solid #0ff;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #111;
+      color: #777;
+      border-top: 1px solid #0ff;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin-top: 1rem;
+      background-color: #0ff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .btn:hover {
+      background-color: #0cc;
+    }
+    /* Overlay styles */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+    .overlay .message {
+      background-color: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      width: 350px;
+      position: relative;
+    }
+    .overlay button {
+      padding: 1rem 2rem;
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .overlay button:hover {
+      background-color: #0cc;
+    }
+    /* Close button */
+    .overlay .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      color: #f00;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 5px 10px;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+    }
+    .overlay .close-btn:hover {
+      background-color: #f00;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://robertsspaceindustries.com/media/rr7mt08lf3xh4r/logo/ECLN-Logo.png" alt="Eclipse Legion Logo">
+    <h1>Eclipse Legion</h1>
+    <p>Search & Rescue Division – Lifesaving Medic Services Across the Verse</p>
+    <p id="build-string">Build Version: </p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>The Search & Rescue Division of Eclipse Legion (formerly Eclipse Search & Rescue) is a specialized team of medical professionals and SAR operators in Star Citizen. Whether you're stranded, injured, or in need of rapid evac, we are here to assist — quickly, reliably, and with discretion.</p>
+    <p><strong>Want to join Eclipse Legion?</strong> <a href="https://discord.gg/BBgMXaqCvb" target="_blank" style="color:#0ff; text-decoration:underline;">Join our Discord</a>.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Emergency Medical Extraction</li>
+      <li>Field Triage & Stabilization</li>
+      <li>Medivac Transport</li>
+      <li>Rescue Operations in Hostile Zones</li>
+      <li>Escort to Nearest Medical Facilities</li>
+    </ul>
+    <a href="#" id="rescue-panel" class="btn">Access Rescue Panel</a>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Need immediate assistance or want to schedule standby coverage? Reach out via Discord or in-game comms.</p>
+    <p><strong>Join our Org:</strong> <a href="https://discord.gg/BBgMXaqCvb" target="_blank" style="color:#0ff; text-decoration:underline;">https://discord.gg/BBgMXaqCvb</a></p>
+    <p><strong>Need help now?</strong> Use our <a href="https://discordapp.com/channels/1343592566267838504/1361486958186074243" target="_blank" style="color:#0ff; text-decoration:underline;">Rescue Panel</a> to request medical support.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2955 Eclipse Legion | Search & Rescue Division</p>
+    <p id="footer-build-string">Build Version: </p>
+  </footer>
+
+  <!-- Overlay -->
+  <div class="overlay" id="overlay">
+    <div class="message">
+      <button class="close-btn" id="close-btn">&times;</button>
+      <p>You must join the Eclipse Legion Discord server before accessing the Rescue Panel.</p>
+      <button id="join-discord-btn">Join Discord</button>
+      <div>
+        <input type="checkbox" id="already-joined" />
+        <label for="already-joined">I have already joined Discord</label>
+      </div>
+      <p id="discord-status-message" style="display:none;">You have joined the Discord! Now you can proceed to the Rescue Panel.</p>
+      <button id="proceed-to-panel" style="display:none;">Go to Rescue Panel</button>
+    </div>
+  </div>
+
+  <script>
+    // Set the dynamic build version and date
+    const buildVersion = "v0.0.1";
+    const currentDate = new Date();
+    const formattedDate = `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+
+    // Set the content of the build version in header and footer
+    document.getElementById('build-string').innerText = `Build Version: ${buildVersion} ${formattedDate}`;
+    document.getElementById('footer-build-string').innerText = `Build Version: ${buildVersion} ${formattedDate}`;
+
+    // Get elements
+    const rescuePanelBtn = document.getElementById('rescue-panel');
+    const overlay = document.getElementById('overlay');
+    const joinDiscordBtn = document.getElementById('join-discord-btn');
+    const closeBtn = document.getElementById('close-btn');
+    const discordStatusMessage = document.getElementById('discord-status-message');
+    const proceedToPanelBtn = document.getElementById('proceed-to-panel');
+    const alreadyJoinedCheckbox = document.getElementById('already-joined');
+
+    // Check if the user has already joined Discord (via cookie)
+    if (getCookie('hasJoinedDiscord') === 'true') {
+      overlay.style.display = 'none'; // Don't show overlay if the user has already joined
+      proceedToPanelBtn.style.display = 'inline-block'; // Show "Proceed to Panel" button directly
+    }
+
+    // Show overlay when trying to access rescue panel
+    rescuePanelBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      overlay.style.display = 'flex';
+    });
+
+    // Redirect to Discord server when "Join Discord" button is clicked
+    joinDiscordBtn.addEventListener('click', function() {
+      window.open("https://discord.gg/BBgMXaqCvb", "_blank");
+      overlay.style.display = 'none'; // Close the overlay
+      alert("You must join the Discord server to proceed. Once you've joined, come back to access the Rescue Panel.");
+    });
+
+    // If the user already joined, save the status and show proceed button
+    alreadyJoinedCheckbox.addEventListener('change', function() {
+      if (this.checked) {
+        setCookie('hasJoinedDiscord', 'true', 30); // Save in a cookie for 30 days
+        discordStatusMessage.style.display = 'block'; // Show confirmation message
+        proceedToPanelBtn.style.display = 'inline-block'; // Show "Proceed to Panel" button
+        joinDiscordBtn.style.display = 'none'; // Hide Join Discord button
+      }
+    });
+
+    // Proceed to the Rescue Panel once they've confirmed they've joined Discord
+    proceedToPanelBtn.addEventListener('click', function() {
+      window.open("https://discordapp.com/channels/1343592566267838504/1361486958186074243", "_blank");
+      overlay.style.display = 'none'; // Close the overlay
+    });
+
+    // Close the overlay
+    closeBtn.addEventListener('click', function() {
+      overlay.style.display = 'none'; // Close the overlay
+    });
+
+    // Cookie functions
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    }
+  </script>
+</body>
+</html>
